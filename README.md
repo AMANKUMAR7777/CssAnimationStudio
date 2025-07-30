@@ -1,7 +1,7 @@
 # CSS Animation Studio
 [👉 Visit the Live Website](https://css-animation-studio-seven.vercel.app/)
 
-Welcome to **CSS Animation Studio** — a web-based tool to create and preview smooth CSS animations, powered entirely by **GSAP** (GreenSock Animation Platform).
+Welcome to **CSS Animation Studio** — a web-based tool to create and preview smooth CSS animations.
 
 ##  Features
 
