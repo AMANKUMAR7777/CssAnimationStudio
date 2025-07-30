@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Studio - Luxury Black & White Theme</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- GSAP Only -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="particles-container"></div>
+    
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-mark"></div>
+                    Animation Studio
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary btn-sm" id="playBtn">
+                        <div class="btn-bg"></div>
+                        <span class="btn-text">▶ Play</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                    <button class="btn btn-outline btn-sm" id="resetBtn">
+                        <div class="btn-bg"></div>
+                        <span class="btn-text">Reset</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <!-- Animation Types -->
+                    <div class="control-section">
+                        <h3>Animation Types</h3>
+                        <div class="animation-grid">
+                            <button class="animation-btn active" data-animation="bounce">
+                                <span class="btn-text">Bounce</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="fadeIn">
+                                <span class="btn-text">Fade In</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="slideIn">
+                                <span class="btn-text">Slide In</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="rotateIn">
+                                <span class="btn-text">Rotate In</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="scaleIn">
+                                <span class="btn-text">Scale In</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="wobble">
+                                <span class="btn-text">Wobble</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="pulse">
+                                <span class="btn-text">Pulse</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="shake">
+                                <span class="btn-text">Shake</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="flip">
+                                <span class="btn-text">Flip</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="swing">
+                                <span class="btn-text">Swing</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="rubberBand">
+                                <span class="btn-text">Rubber Band</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="animation-btn" data-animation="heartBeat">
+                                <span class="btn-text">Heart Beat</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Duration Control -->
+                    <div class="control-section">
+                        <div class="control-group">
+                            <label for="duration">Duration</label>
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-fill"></div>
+                                <input type="range" id="duration" min="0.1" max="5" step="0.1" value="1">
+                                <span class="slider-value">1.0s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delay Control -->
+                    <div class="control-section">
+                        <div class="control-group">
+                            <label for="delay">Delay</label>
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-fill"></div>
+                                <input type="range" id="delay" min="0" max="3" step="0.1" value="0">
+                                <span class="slider-value">0.0s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Iterations Control -->
+                    <div class="control-section">
+                        <div class="control-group">
+                            <label for="iterations">Iterations</label>
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-fill"></div>
+                                <input type="range" id="iterations" min="1" max="10" step="1" value="1">
+                                <span class="slider-value">1</span>
+                            </div>
+                            <div class="control-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="infinite">
+                                    <span class="checkbox-text">Infinite Loop</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transform Controls -->
+                    <div class="control-section">
+                        <h3>Transform</h3>
+                        <div class="control-group">
+                            <label for="scale">Scale</label>
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-fill"></div>
+                                <input type="range" id="scale" min="0.1" max="2" step="0.1" value="1">
+                                <span class="slider-value">1.0</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="rotation">Rotation</label>
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-fill"></div>
+                                <input type="range" id="rotation" min="0" max="360" step="5" value="0">
+                                <span class="slider-value">0°</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="opacity">Opacity</label>
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <div class="slider-fill"></div>
+                                <input type="range" id="opacity" min="0" max="1" step="0.1" value="1">
+                                <span class="slider-value">1.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direction Control -->
+                    <div class="control-section">
+                        <div class="control-group">
+                            <label for="direction">Direction</label>
+                            <div class="select-container">
+                                <select id="direction" class="select-input">
+                                    <option value="normal">Normal</option>
+                                    <option value="reverse">Reverse</option>
+                                    <option value="alternate">Alternate</option>
+                                    <option value="alternate-reverse">Alternate Reverse</option>
+                                </select>
+                                <span class="select-arrow">▼</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fill Mode Control -->
+                    <div class="control-section">
+                        <div class="control-group">
+                            <label for="fillMode">Fill Mode</label>
+                            <div class="select-container">
+                                <select id="fillMode" class="select-input">
+                                    <option value="none">None</option>
+                                    <option value="forwards">Forwards</option>
+                                    <option value="backwards">Backwards</option>
+                                    <option value="both">Both</option>
+                                </select>
+                                <span class="select-arrow">▼</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timing Function Control -->
+                    <div class="control-section">
+                        <div class="control-group">
+                            <label for="timingFunction">Timing Function</label>
+                            <div class="select-container">
+                                <select id="timingFunction" class="select-input">
+                                    <option value="ease">Ease</option>
+                                    <option value="linear">Linear</option>
+                                    <option value="ease-in">Ease In</option>
+                                    <option value="ease-out">Ease Out</option>
+                                    <option value="ease-in-out">Ease In Out</option>
+                                    <option value="cubic-bezier(0.68, -0.55, 0.265, 1.55)">Bounce</option>
+                                    <option value="cubic-bezier(0.25, 0.46, 0.45, 0.94)">Ease Out Quad</option>
+                                    <option value="cubic-bezier(0.23, 1, 0.32, 1)">Ease Out Expo</option>
+                                </select>
+                                <span class="select-arrow">▼</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Preview Area -->
+            <section class="preview-area">
+                <!-- Live Preview -->
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <h2>Live Preview</h2>
+                        <div class="header-actions">
+                            <button class="btn btn-primary btn-sm" id="playBtn2">
+                                <div class="btn-bg"></div>
+                                <span class="btn-text">▶ Play</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="preview-stage">
+                        <div class="stage-bg"></div>
+                        <div class="animated-element" id="animatedElement">
+                            <div class="element-glow"></div>
+                            <div class="element-content">
+                                <div class="element-mark"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timing-graph">
+                        <h3>Timing Function Visualization</h3>
+                        <div class="graph-container">
+                            <div class="graph-overlay"></div>
+                            <canvas id="timingGraph" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Output -->
+                <div class="css-output">
+                    <div class="output-header">
+                        <h3>Generated CSS</h3>
+                        <div class="output-actions">
+                            <button class="btn btn-outline btn-sm" id="minifyBtn">
+                                <div class="btn-bg"></div>
+                                <span class="btn-text">Minify</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                            <button class="btn btn-primary btn-sm" id="copyCodeBtn">
+                                <div class="btn-bg"></div>
+                                <span class="btn-text">Copy</span>
+                                <div class="btn-ripple"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <pre class="css-code" id="cssCode">/* CSS will be generated here */</pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <div class="toast-icon"></div>
+            <span class="toast-message">CSS copied to clipboard!</span>
+            <div class="toast-progress"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
