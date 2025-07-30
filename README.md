@@ -1,4 +1,5 @@
 # CSS Animation Studio
+[👉 Visit the Live Website](https://css-animation-studio-seven.vercel.app/)
 
 Welcome to **CSS Animation Studio** — a web-based tool to create and preview smooth CSS animations, powered entirely by **GSAP** (GreenSock Animation Platform).
 
@@ -27,3 +28,6 @@ Clone the repo:
 ```bash
 git clone https://github.com/your-username/css-animation-studio.git
 cd css-animation-studio
+
+
+Then open index.html in your browser. That’s it!
