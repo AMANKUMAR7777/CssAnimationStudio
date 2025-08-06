@@ -31,3 +31,7 @@ cd css-animation-studio
 
 
 Then open index.html in your browser. That’s it!
+
+
+
+>Note: I have used AI to optimize and clean up my code and for few more features. The main logic and structure were written by me — I just used AI to make my code clean.
